@@ -33,4 +33,6 @@ btn.addEventListener("click", exchangeRate = async (evt) => {
     console.log(response);
     let data = await response.json();
     console.log(data);
+    let rate = data[toCurr];
+    console.log(rate);
 })
