@@ -32,5 +32,5 @@ btn.addEventListener("click", exchangeRate = async (evt) => {
     let response = await fetch(`${baseURL}/latest/${fromCurr.value}`);
     console.log(response);
     let data = await response.json();
-    console.log(data);
+    console.log(data[result]);
 })
