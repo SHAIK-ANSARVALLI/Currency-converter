@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Currency converter</h1>
+        </div>
+        
+        <div class="inner-container">
+            <div class="amount inner-container-content">
+                <h4>Amount</h4>
+                <div class="amount-container">
+                    <!-- <div>$</div> -->
+                    <input type="text" value="1" pattern="[0-9][.]">
+                </div>
+            </div>
+            
+            <div class="from inner-container-content">
+                <h4>From</h4>
+                <div class="select-container from">
+                    <img src="">
+                    <select name="from" id="from">
+                        <option>Select a Country</option>
+                    </select>
+                </div>
+            </div>
+            <i class="bx bx-transfer inner-container-content"></i>
+            <div class="to inner-container-content">
+                <h4>To</h4>
+                <div class="select-container to">
+                    <img src="">
+                    <select name="to" id="to">
+                        <option>Select a Country</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            1 INR = 100 USD
+        </div>
+
+        <div class="convert">
+            <button type="submit">Convert</button>
+        </div>
+    </div>
+
+    <script src="currencyForms.js"></script>
+    <script src="countryList.js"></script>
+    <script src="app.js"></script>
+    <script src="proxy.js"></script>
+</body>
+</html>
