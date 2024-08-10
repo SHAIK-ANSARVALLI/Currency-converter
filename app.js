@@ -1,4 +1,4 @@
-const proxyUrl = "http://localhost:3001/api";
+const baseURL = "https://v6.exchangerate-api.com/v6/fad7770f12da02b1e6899328";
 
 let dropDown = document.querySelectorAll(".select-container select");
 let btn = document.querySelector(".convert button");
@@ -33,6 +33,6 @@ btn.addEventListener("click", exchangeRate = async (evt) => {
     // console.log(toCurr.value);
     // console.log(amount.value);
 
-    let response = await fetch(`${proxyUrl}/latest/${fromCurr.value}`);
+    let response = await fetch(`${baseURL}/latest/${fromCurr.value}`);
     console.log(response);
 })
