@@ -29,10 +29,6 @@ let updateFlag = (element) => {
 
 btn.addEventListener("click", exchangeRate = async (evt) => {
     evt.preventDefault();
-    // console.log(fromCurr.value);
-    // console.log(toCurr.value);
-    // console.log(amount.value);
-
     let response = await fetch(`${baseURL}/latest/${fromCurr.value}`);
     console.log(response);
 })
