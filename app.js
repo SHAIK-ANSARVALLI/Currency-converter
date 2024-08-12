@@ -45,7 +45,7 @@ btn.addEventListener("click", exchangeRate = async (evt) => {
 
 let printCurr = (amtValue,rate) => {
     let finalRate = amtValue * rate;
-    msg.innerHTML = `<strong style = "font-size: 2rem">${amtValue}</strong> ${currencyForms[fromCurr.value]} = </br><strong style = "font-size: 2rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${finalRate}</strong> ${currencyForms[toCurr.value]}`;
+    msg.innerHTML = `<strong style = "font-size: 2rem">${amtValue}</strong> ${currencyForms[fromCurr.value]} = <strong style = "font-size: 2rem">${finalRate}</strong> ${currencyForms[toCurr.value]}`;
     container.insertBefore(msg, convert);
     msg.setAttribute("style", "padding-bottom: 15px");
 }
