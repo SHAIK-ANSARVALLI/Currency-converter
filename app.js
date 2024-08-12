@@ -1,10 +1,10 @@
 const baseURL = "https://v6.exchangerate-api.com/v6/fad7770f12da02b1e6899328";
 
-let dropDown = document.querySelectorAll(".select-container select");
-let btn = document.querySelector(".convert button");
-let amount = document.querySelector(".amount input");
-let fromCurr = document.querySelector("#from");
-let toCurr = document.querySelector("#to");
+const dropDown = document.querySelectorAll(".select-container select");
+const btn = document.querySelector(".convert button");
+const fromCurr = document.querySelector("#from");
+const toCurr = document.querySelector("#to");
+const msg = document.createElement("div");
 
 for(let selectOpt of dropDown) {
     for(let currCode in currencyForms) {
@@ -13,7 +13,7 @@ for(let selectOpt of dropDown) {
         newOption.value = currCode;
         selectOpt.append(newOption); 
     }
-
+    
     selectOpt.addEventListener("change", (evt) => {
         updateFlag(evt.target);
     });
@@ -29,8 +29,23 @@ let updateFlag = (element) => {
 
 btn.addEventListener("click", exchangeRate = async (evt) => {
     evt.preventDefault();
+    
+    let amount = document.querySelector(".amount input");
+    let amtValue = amount.value;
+
     let response = await fetch(`${baseURL}/latest/${fromCurr.value}`);
-    console.log(response);
     let data = await response.json();
-    console.log(data["result"]);
-})
+    let conversion_rates = await data["conversion_rates"];
+    let rate = await conversion_rates[toCurr.value];
+
+    printCurr(amtValue,rate);
+});
+
+let printCurr = (amtValue,rate) => {
+    let finalRate = amtValue * rate;
+    console.log(finalRate);
+    let finalMsg = `${amtValue} ${fromCurr.value} = ${finalRate} ${toCurr.value}`;
+    msg.innerText = finalMsg;
+    console.log(msg);
+    msg.before(".convert");
+}
