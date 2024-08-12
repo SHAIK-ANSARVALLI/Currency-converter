@@ -1,6 +1,6 @@
 const currencyForms = {
     AED: "Arab Emirates Dirham",
-    AFN: 'Afghan Afghan',
+    AFN: 'Afghani Afghan',
     XCD: 'East Caribbean Dollar',
     ALL: 'Albanian Lek',
     AMD: 'Armenian Dram',

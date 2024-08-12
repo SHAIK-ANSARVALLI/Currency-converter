@@ -5,6 +5,8 @@ const btn = document.querySelector(".convert button");
 const fromCurr = document.querySelector("#from");
 const toCurr = document.querySelector("#to");
 const msg = document.createElement("div");
+const convert = document.querySelector(".convert");
+const container = document.querySelector(".container");
 
 for(let selectOpt of dropDown) {
     for(let currCode in currencyForms) {
@@ -43,9 +45,7 @@ btn.addEventListener("click", exchangeRate = async (evt) => {
 
 let printCurr = (amtValue,rate) => {
     let finalRate = amtValue * rate;
-    console.log(finalRate);
-    let finalMsg = `${amtValue} ${fromCurr.value} = ${finalRate} ${toCurr.value}`;
-    msg.innerText = finalMsg;
-    console.log(msg);
-    msg.before(".convert");
+    msg.innerHTML = `<strong style = "font-size: 2rem">${amtValue}</strong> ${currencyForms[fromCurr.value]} = </br><strong style = "font-size: 2rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${finalRate}</strong> ${currencyForms[toCurr.value]}`;
+    container.insertBefore(msg, convert);
+    msg.setAttribute("style", "padding-bottom: 15px");
 }
